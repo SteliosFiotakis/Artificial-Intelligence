@@ -1,12 +1,12 @@
 """
-A program for word auto-completion. There is a dictianary of the form -> {word: frequency}.
-From the user input we check which words starts with it, and then we select the most frequent.
+A program for word auto-completion. There is a dictianary of the form -> {word: frequency} saved as csv file.
+From the user input we check which words starts with it, and then we select the most frequent ones.
 """
 import msvcrt
 import csv
 
 # Importing the {word: frequency} dictionary #
-words_dictionary_path = "E:\\archive\\words_dictionary.csv"
+words_dictionary_path = "E:\\archive\\words_dictionary.csv"    # put here the dictionary path
 words = dict()
 
 with open(words_dictionary_path, "r", encoding="utf8") as csvfile:
@@ -34,9 +34,11 @@ while True:
     # Remove or Add user character #
     if user_char == "\x08":     # Backspace character
         whole_sentence = whole_sentence[:-1]
+    # We use 1, 2, 3 in order to select the suggestion #
     elif user_char not in ["1", "2", "3"]:
         whole_sentence += user_char
 
+    # Just for visual clearness
     for _ in range(20):
         print()
 
