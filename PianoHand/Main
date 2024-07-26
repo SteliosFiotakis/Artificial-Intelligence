@@ -1,0 +1,5 @@
+from Songs import moonlight_sonata, godfather_waltz, melisses
+
+import Simulator
+
+Simulator.play(melisses)
