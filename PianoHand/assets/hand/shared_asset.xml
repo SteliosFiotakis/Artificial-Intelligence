@@ -1,0 +1,53 @@
+<!-- See LICENSE.md for legal notices. LICENSE.md must be kept together with this file. -->
+<mujoco>
+    <texture type="skybox" builtin="gradient" rgb1="0.44 0.85 0.56" rgb2="0.46 0.87 0.58" width="32" height="32"></texture>
+
+    <texture name="robot0:texplane" type="2d" builtin="checker" rgb1="0.2 0.3 0.4" rgb2="0.1 0.15 0.2" width="512" height="512"></texture>
+    <texture name="robot0:texgeom" type="cube" builtin="flat" mark="cross" width="127" height="127" rgb1="0.3 0.6 0.5" rgb2="0.3 0.6 0.5" markrgb="0 0 0" random="0.01"></texture>
+
+    <material name="robot0:MatGnd" reflectance="0.5" texture="robot0:texplane" texrepeat="1 1" texuniform="true"></material>
+    <material name="robot0:MatColl" specular="1" shininess="0.3" reflectance="0.5" rgba="0.4 0.5 0.6 1"></material>
+    <material name="robot0:MatViz" specular="0.75" shininess="0.1" reflectance="0.5" rgba="0.93 0.93 0.93 1"></material>
+    <material name="robot0:object" texture="robot0:texgeom" texuniform="false"></material>
+    <material name="floor_mat" specular="0" shininess="0.5" reflectance="0" rgba="0.2 0.2 0.2 0"></material>
+
+    <mesh name="robot0:forearm" file="hand/forearm_electric.stl"></mesh>
+    <mesh name="robot0:forearm_cvx" file="hand/forearm_electric_cvx.stl"></mesh>
+    <mesh name="robot0:wrist" scale="0.001 0.001 0.001" file="hand/wrist.stl"></mesh>
+    <mesh name="robot0:palm" scale="0.001 0.001 0.001" file="hand/palm.stl"></mesh>
+    <mesh name="robot0:knuckle" scale="0.001 0.001 0.001" file="hand/knuckle.stl"></mesh>
+    <mesh name="robot0:F3" scale="0.001 0.001 0.001" file="hand/F3.stl"></mesh>
+    <mesh name="robot0:F2" scale="0.001 0.001 0.001" file="hand/F2.stl"></mesh>
+    <mesh name="robot0:F1" scale="0.001 0.001 0.001" file="hand/F1.stl"></mesh>
+    <mesh name="robot0:lfmetacarpal" scale="0.001 0.001 0.001" file="hand/lfmetacarpal.stl"></mesh>
+    <mesh name="robot0:TH3_z" scale="0.001 0.001 0.001" file="hand/TH3_z.stl"></mesh>
+    <mesh name="robot0:TH2_z" scale="0.001 0.001 0.001" file="hand/TH2_z.stl"></mesh>
+    <mesh name="robot0:TH1_z" scale="0.001 0.001 0.001" file="hand/TH1_z.stl"></mesh>
+
+    <material name="black" specular="0.5" shininess="0.25" rgba="0.16355 0.16355 0.16355 1"/>
+    <material name="gray" specular="0.0" shininess="0.25" rgba="0.80848 0.80848 0.80848 1"/>
+    <material name="metallic" specular="0" shininess="0.25" rgba="0.9 0.9 0.9 1"/>
+
+    <mesh class="left_hand" file="lefthand/forearm_0.obj"/>
+    <mesh class="left_hand" file="lefthand/forearm_1.obj"/>
+    <mesh class="left_hand" file="lefthand/forearm_collision.obj"/>
+    <mesh class="left_hand" file="lefthand/wrist.obj" scale="-0.001 0.001 0.001"/>
+    <mesh class="left_hand" file="lefthand/palm.obj" scale="-0.001 0.001 0.001"/>
+    <mesh class="left_hand" file="lefthand/f_knuckle.obj"/>
+    <mesh class="left_hand" file="lefthand/f_proximal.obj"/>
+    <mesh class="left_hand" file="lefthand/f_middle.obj"/>
+    <mesh class="left_hand" file="lefthand/f_distal_pst.obj"/>
+    <mesh class="left_hand" file="lefthand/lf_metacarpal.obj" scale="-0.001 0.001 0.001"/>
+    <mesh class="left_hand" file="lefthand/th_proximal.obj"/>
+    <mesh class="left_hand" file="lefthand/th_middle.obj"/>
+    <mesh class="left_hand" file="lefthand/th_distal_pst.obj"/>
+
+    <mesh name="white_a_stl" file="F:\PyCharm Projects\Magnificent\assets\stls\Piano\WhiteA.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="white_b_stl" file="F:\PyCharm Projects\Magnificent\assets\stls\Piano\WhiteB.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="white_c_stl" file="F:\PyCharm Projects\Magnificent\assets\stls\Piano\WhiteC.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="white_d_stl" file="F:\PyCharm Projects\Magnificent\assets\stls\Piano\WhiteD.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="white_e_stl" file="F:\PyCharm Projects\Magnificent\assets\stls\Piano\WhiteE.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="white_f_stl" file="F:\PyCharm Projects\Magnificent\assets\stls\Piano\WhiteF.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="white_g_stl" file="F:\PyCharm Projects\Magnificent\assets\stls\Piano\WhiteG.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="black_stl" file="F:\PyCharm Projects\Magnificent\assets\stls\Piano\NewBlack.stl" scale="0.001 0.001 0.001"/>
+</mujoco>

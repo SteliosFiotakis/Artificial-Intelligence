@@ -1,0 +1,154 @@
+<!--		<body name="Octave_0">-->
+<!--			<body name="A0" pos="0 0 0" childclass="key">-->
+<!--				<geom name="A0_white_key" class="a" />-->
+<!--				<joint name="A0_joint"/>-->
+<!--				<site name="A0_site"/>-->
+<!--			</body>-->
+<!--			<body name="AB0" pos="0 0 0" childclass="key">-->
+<!--				<geom name="AB0_white_key" class="ab" />-->
+<!--				<joint name="AB0_joint"/>-->
+<!--				<site name="AB0_site"/>-->
+<!--			</body>-->
+<!--			<body name="B0" pos="0 0 0" childclass="key">-->
+<!--				<geom name="B0_white_key" class="b" />-->
+<!--				<joint name="B0_joint"/>-->
+<!--				<site name="B0_site"/>-->
+<!--			</body>-->
+<!--			<body name="C0" pos="0 0 0" childclass="key">-->
+<!--				<geom name="C0_white_key" class="c" />-->
+<!--				<joint name="C0_joint"/>-->
+<!--				<site name="C0_site"/>-->
+<!--			</body>-->
+<!--			<body name="D0" pos="0 0 0" childclass="key">-->
+<!--				<geom name="D0_white_key" class="d" />-->
+<!--				<joint name="D0_joint"/>-->
+<!--				<site name="D0_site"/>-->
+<!--			</body>-->
+<!--			<body name="E0" pos="0 0 0" childclass="key">-->
+<!--				<geom name="E0_white_key" class="e" />-->
+<!--				<joint name="E0_joint"/>-->
+<!--				<site name="E0_site"/>-->
+<!--			</body>-->
+<!--			<body name="F0" pos="0 0 0" childclass="key">-->
+<!--				<geom name="F0_white_key" class="f" />-->
+<!--				<joint name="F0_joint"/>-->
+<!--				<site name="F0_site"/>-->
+<!--			</body>-->
+<!--			<body name="G0" pos="0 0 0" childclass="key">-->
+<!--				<geom name="G0_white_key" class="g" />-->
+<!--				<joint name="G0_joint"/>-->
+<!--				<site name="G0_site"/>-->
+<!--			</body>-->
+<!--		</body>-->
+<!--		<body name="Octave_1" pos="1.0 0.5 0" >-->
+<!--			<body name="A1" pos="0 0 0" childclass="key">-->
+<!--				<geom name="A1_white_key" class="a" />-->
+<!--				<joint name="A1_joint"/>-->
+<!--				<site name="A1_site"/>-->
+<!--			</body>-->
+<!--			<body name="AB1" pos="0 0 0" childclass="key">-->
+<!--				<geom name="AB1_white_key" class="ab" />-->
+<!--				<joint name="AB1_joint"/>-->
+<!--				<site name="AB1_site"/>-->
+<!--			</body>-->
+<!--			<body name="B1" pos="0 0 0" childclass="key">-->
+<!--				<geom name="B1_white_key" class="b" />-->
+<!--				<joint name="B1_joint"/>-->
+<!--				<site name="B1_site"/>-->
+<!--			</body>-->
+<!--			<body name="C1" pos="0 0 0" childclass="key">-->
+<!--				<geom name="C1_white_key" class="c" />-->
+<!--				<joint name="C1_joint"/>-->
+<!--				<site name="C1_site"/>-->
+<!--			</body>-->
+<!--			<body name="CD1" pos="0 0 0" childclass="key">-->
+<!--				<geom name="CD1_white_key" class="cd" />-->
+<!--				<joint name="CD1_joint"/>-->
+<!--				<site name="CD1_site"/>-->
+<!--			</body>-->
+<!--			<body name="D1" pos="0 0 0" childclass="key">-->
+<!--				<geom name="D1_white_key" class="d" />-->
+<!--				<joint name="D1_joint"/>-->
+<!--				<site name="D1_site"/>-->
+<!--			</body>-->
+<!--			<body name="DE1" pos="0 0 0" childclass="key">-->
+<!--				<geom name="DE1_white_key" class="de" />-->
+<!--				<joint name="DE1_joint"/>-->
+<!--				<site name="DE1_site"/>-->
+<!--			</body>-->
+<!--			<body name="E1" pos="0 0 0" childclass="key">-->
+<!--				<geom name="E1_white_key" class="e" />-->
+<!--				<joint name="E1_joint"/>-->
+<!--				<site name="E1_site"/>-->
+<!--			</body>-->
+<!--			<body name="F1" pos="0 0 0" childclass="key">-->
+<!--				<geom name="F1_white_key" class="f" />-->
+<!--				<joint name="F1_joint"/>-->
+<!--				<site name="F1_site"/>-->
+<!--			</body>-->
+<!--			<body name="FG1" pos="0 0 0" childclass="key">-->
+<!--				<geom name="FG1_white_key" class="fg" />-->
+<!--				<joint name="FG1_joint"/>-->
+<!--				<site name="FG1_site"/>-->
+<!--			</body>-->
+<!--			<body name="G1" pos="0 0 0" childclass="key">-->
+<!--				<geom name="G1_white_key" class="g" />-->
+<!--				<joint name="G1_joint"/>-->
+<!--				<site name="G1_site"/>-->
+<!--			</body>-->
+<!--			<body name="GA1" pos="0 0 0" childclass="key">-->
+<!--				<geom name="GA1_white_key" class="ga" />-->
+<!--				<joint name="GA1_joint"/>-->
+<!--				<site name="GA1_site"/>-->
+<!--			</body>-->
+<!--		</body>-->
+<!--		<body name="Octave_4" pos="0.900 -0.8 -0.1" euler="0 3.14159 0">-->
+<!--			<body name="C4" pos="0 0 0" childclass="key">-->
+<!--				<geom name="C4_white_key" class="c" />-->
+<!--				<joint name="C4_joint"/>-->
+<!--			</body>-->
+<!--			<body name="CD4" pos="0 0 0" childclass="key">-->
+<!--				<geom name="CD4_white_key" class="cd" />-->
+<!--				<joint name="CD4_joint"/>-->
+<!--			</body>-->
+<!--			<body name="D4" pos="0 0 0" childclass="key">-->
+<!--				<geom name="D4_white_key" class="d" />-->
+<!--				<joint name="D4_joint"/>-->
+<!--			</body>-->
+<!--			<body name="DE4" pos="0 0 0" childclass="key">-->
+<!--				<geom name="DE4_white_key" class="de" />-->
+<!--				<joint name="DE4_joint"/>-->
+<!--			</body>-->
+<!--			<body name="E4" pos="0 0 0" childclass="key">-->
+<!--				<geom name="E4_white_key" class="e" />-->
+<!--				<joint name="E4_joint"/>-->
+<!--			</body>-->
+<!--			<body name="F4" pos="0 0 0" childclass="key">-->
+<!--				<geom name="F4_white_key" class="f" />-->
+<!--				<joint name="F4_joint"/>-->
+<!--			</body>-->
+<!--			<body name="FG4" pos="0 0 0" childclass="key">-->
+<!--				<geom name="FG4_white_key" class="fg" />-->
+<!--				<joint name="FG4_joint"/>-->
+<!--			</body>-->
+<!--			<body name="G4" pos="0 0 0" childclass="key">-->
+<!--				<geom name="G4_white_key" class="g" />-->
+<!--				<joint name="G4_joint"/>-->
+<!--			</body>-->
+<!--			<body name="GA4" pos="0 0 0" childclass="key">-->
+<!--				<geom name="GA4_white_key" class="ga" />-->
+<!--				<joint name="GA4_joint"/>-->
+<!--			</body>-->
+<!--			<body name="A4" pos="0 0 0" childclass="key">-->
+<!--				<geom name="A4_white_key" class="a" />-->
+<!--				<joint name="A4_joint"/>-->
+<!--			</body>-->
+<!--			<body name="AB4" pos="0 0 0" childclass="key">-->
+<!--				<geom name="AB4_white_key" class="ab" />-->
+<!--				<joint name="AB4_joint"/>-->
+<!--			</body>-->
+<!--			<body name="B4" pos="0 0 0" childclass="key">-->
+<!--				<geom name="B4_white_key" class="b" />-->
+<!--				<joint name="B4_joint"/>-->
+<!--			</body>-->
+<!--		</body>-->

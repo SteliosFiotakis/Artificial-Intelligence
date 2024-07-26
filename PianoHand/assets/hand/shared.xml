@@ -1,0 +1,590 @@
+<!-- See LICENSE.md for legal notices. LICENSE.md must be kept together with this file. -->
+<mujoco>
+    <size njmax="500" nconmax="200" nuser_jnt="1" nuser_site="1" nuser_tendon="1" nuser_sensor="1" nuser_actuator="16" nstack="600000"></size>
+
+    <visual>
+        <map fogstart="3" fogend="5" force="0.1"></map>
+        <quality shadowsize="4096"></quality>
+    </visual>
+
+    <default>
+        <default class="robot0:asset_class">
+            <geom friction="1 0.005 0.001" condim="3" margin="0.0005" contype="1" conaffinity="1"></geom>
+            <joint limited="true" damping="0.1" armature="0.001" margin="0.01" frictionloss="0.001"></joint>
+            <site size="0.005" rgba="0.4 0.9 0.4 1"></site>
+            <general ctrllimited="true" forcelimited="true"></general>
+        </default>
+        <default class="robot0:D_Touch">
+            <site type="box" size="0.009 0.004 0.013" pos="0 -0.004 0.018" rgba="0.8 0.8 0.8 0.15" group="4"></site>
+        </default>
+        <default class="robot0:DC_Hand">
+            <geom material="robot0:MatColl" contype="1" conaffinity="0" group="4"></geom>
+        </default>
+        <default class="robot0:D_Vizual">
+            <geom material="robot0:MatViz" contype="0" conaffinity="0" group="1" type="mesh"></geom>
+        </default>
+        <default class="robot0:free">
+            <joint type="free" damping="0" armature="0" limited="false"></joint>
+        </default>
+        <default class="left_hand">
+            <mesh scale="0.001 0.001 0.001"/>
+            <joint axis="1 0 0" damping="0.05" armature="0.0002" frictionloss="0.01"/>
+            <position forcelimited='true' forcerange="-1 1"/>
+            <default class="wrist">
+            <joint damping="0.5"/>
+            <default class="wrist_y">
+              <joint axis="0 -1 0" limited="true" range="-0.523599 0.174533"/>
+              <position kp="10" ctrllimited="true" ctrlrange="-0.523599 0.174533" forcerange="-10 10"/>
+            </default>
+            <default class="wrist_x">
+              <joint limited="true" range="-0.698132 0.488692"/>
+              <position kp="8" ctrlrange="-0.698132 0.488692" forcerange="-5 5"/>
+            </default>
+            </default>
+            <default class="thumb">
+            <default class="thbase">
+              <joint axis="0 0 1" limited="true" range="-1.0472 1.0472"/>
+              <position kp="0.4" ctrlrange="-1.0472 1.0472" forcerange="-3 3"/>
+            </default>
+            <default class="thproximal">
+              <joint axis="-1 0 0" limited="true" range="0 1.22173"/>
+              <position ctrlrange="0 1.22173" forcerange="-2 2"/>
+            </default>
+            <default class="thhub">
+              <joint axis="-1 0 0" limited="true" range="-0.20944 0.20944"/>
+              <position kp="0.5" ctrlrange="-0.20944 0.20944"/>
+            </default>
+            <default class="thmiddle">
+              <joint axis="0 -1 0" limited="true" range="-0.698132 0.698132"/>
+              <position kp="1.5" ctrlrange="-0.698132 0.698132"/>
+            </default>
+            <default class="thdistal">
+              <joint limited="true" range="-0.261799 1.5708"/>
+              <position ctrlrange="-0.261799 1.5708"/>
+            </default>
+            </default>
+            <default class="metacarpal">
+            <joint axis="0.573576 0 0.819152" limited="true" range="0 0.785398"/>
+            <position ctrlrange="0 0.785398"/>
+            </default>
+            <default class="knuckle">
+            <joint axis="0 -1 0" limited="true" range="-0.349066 0.349066"/>
+            <position ctrlrange="-0.349066 0.349066"/>
+            </default>
+            <default class="proximal">
+            <joint limited="true" range="-0.261799 1.5708"/>
+            <position ctrlrange="-0.261799 1.5708"/>
+            </default>
+            <default class="middle_distal">
+            <joint limited="true" range="0 1.5708"/>
+            <position kp="0.5" ctrlrange="0 3.1415"/>
+            </default>
+
+            <default class="plastic">
+            <geom solimp="0.5 0.99 0.0001" solref="0.005 1"/>
+            <default class="plastic_visual">
+              <geom type="mesh" material="black" contype="0" conaffinity="0" group="2"/>
+            </default>
+            <default class="plastic_collision">
+              <geom group="3"/>
+            </default>
+            </default>
+        </default>
+	    <default class="key">
+            <geom type="mesh"/>
+            <joint type="hinge" pos="0 0.5 0" axis="1 0 0" limited="true" range="0 0.02"/>
+            <default class="white_key">
+                <geom rgba="1 1 1 1" />
+                <default class="a">
+                    <geom mesh="white_a_stl" pos="0 0 0" />
+                </default>
+                <default class="b">
+                    <geom mesh="white_b_stl" pos="0.000 0 0" />
+                </default>
+                <default class="c">
+                    <geom mesh="white_c_stl" pos="0.000 0 0" />
+                </default>
+                <default class="d">
+                    <geom mesh="white_d_stl" pos="0.000 0 0" />
+                </default>
+                <default class="e">
+                    <geom mesh="white_e_stl" pos="0.000 0 0" />
+                </default>
+                <default class="f">
+                    <geom mesh="white_f_stl" pos="0.000 0 0" />
+                </default>
+                <default class="g">
+                    <geom mesh="white_g_stl" pos="0.000 0 0" />
+                </default>
+            </default>
+            <default class="black_key">
+                <geom mesh="black_stl" rgba="0 0 0 1"/>
+                <default class="ab">
+                    <geom pos="0.052 0.055 0.012" />
+<!--                    <geom pos="0.0577 0.1 0" />-->
+                </default>
+                <default class="cd">
+                    <geom pos="-0.075 0.055 0.012" />
+                </default>
+                <default class="de">
+                    <geom pos="-0.045 0.055 0.012" />
+                </default>
+                <default class="fg">
+                    <geom pos="-0.003 0.055 0.012" />
+                </default>
+                <default class="ga">
+                    <geom pos="0.025 0.055 0.012" />
+                </default>
+            </default>
+        </default>
+    </default>
+
+    <contact>
+        <pair geom1="robot0:C_ffdistal" geom2="robot0:C_thdistal" condim="1"></pair>
+        <pair geom1="robot0:C_ffmiddle" geom2="robot0:C_thdistal" condim="1"></pair>
+        <pair geom1="robot0:C_ffproximal" geom2="robot0:C_thdistal" condim="1"></pair>
+        <pair geom1="robot0:C_mfproximal" geom2="robot0:C_thdistal" condim="1"></pair>
+        <pair geom1="robot0:C_mfdistal" geom2="robot0:C_thdistal" condim="1"></pair>
+        <pair geom1="robot0:C_rfdistal" geom2="robot0:C_thdistal" condim="1"></pair>
+        <pair geom1="robot0:C_lfdistal" geom2="robot0:C_thdistal" condim="1"></pair>
+        <pair geom1="robot0:C_palm0" geom2="robot0:C_thdistal" condim="1"></pair>
+        <pair geom1="robot0:C_mfdistal" geom2="robot0:C_ffdistal" condim="1"></pair>
+        <pair geom1="robot0:C_rfdistal" geom2="robot0:C_mfdistal" condim="1"></pair>
+        <pair geom1="robot0:C_lfdistal" geom2="robot0:C_rfdistal" condim="1"></pair>
+        <pair geom1="robot0:C_mfproximal" geom2="robot0:C_ffproximal" condim="1"></pair>
+        <pair geom1="robot0:C_rfproximal" geom2="robot0:C_mfproximal" condim="1"></pair>
+        <pair geom1="robot0:C_lfproximal" geom2="robot0:C_rfproximal" condim="1"></pair>
+        <pair geom1="robot0:C_lfdistal" geom2="robot0:C_rfdistal" condim="1"></pair>
+        <pair geom1="robot0:C_lfdistal" geom2="robot0:C_mfdistal" condim="1"></pair>
+        <pair geom1="robot0:C_lfdistal" geom2="robot0:C_rfmiddle" condim="1"></pair>
+        <pair geom1="robot0:C_lfmiddle" geom2="robot0:C_rfdistal" condim="1"></pair>
+        <pair geom1="robot0:C_lfmiddle" geom2="robot0:C_rfmiddle" condim="1"></pair>
+
+        <exclude body1="lh_wrist" body2="lh_forearm"/>
+        <exclude body1="lh_thproximal" body2="lh_thmiddle"/>
+
+        <exclude body1="AB0" body2="A0"/>
+        <exclude body1="AB0" body2="B0"/>
+
+        <exclude body1="AB1" body2="A1"/>
+        <exclude body1="AB1" body2="B1"/>
+        <exclude body1="CD1" body2="C1"/>
+        <exclude body1="CD1" body2="D1"/>
+        <exclude body1="DE1" body2="D1"/>
+        <exclude body1="DE1" body2="E1"/>
+        <exclude body1="FG1" body2="F1"/>
+        <exclude body1="FG1" body2="G1"/>
+        <exclude body1="GA1" body2="G1"/>
+        <exclude body1="GA1" body2="A1"/>
+
+        <exclude body1="AB2" body2="A2"/>
+        <exclude body1="AB2" body2="B2"/>
+        <exclude body1="CD2" body2="C2"/>
+        <exclude body1="CD2" body2="D2"/>
+        <exclude body1="DE2" body2="D2"/>
+        <exclude body1="DE2" body2="E2"/>
+        <exclude body1="FG2" body2="F2"/>
+        <exclude body1="FG2" body2="G2"/>
+        <exclude body1="GA2" body2="G2"/>
+        <exclude body1="GA2" body2="A2"/>
+
+        <exclude body1="AB3" body2="A3"/>
+        <exclude body1="AB3" body2="B3"/>
+        <exclude body1="CD3" body2="C3"/>
+        <exclude body1="CD3" body2="D3"/>
+        <exclude body1="DE3" body2="D3"/>
+        <exclude body1="DE3" body2="E3"/>
+        <exclude body1="FG3" body2="F3"/>
+        <exclude body1="FG3" body2="G3"/>
+        <exclude body1="GA3" body2="G3"/>
+        <exclude body1="GA3" body2="A3"/>
+
+        <exclude body1="AB4" body2="A4"/>
+        <exclude body1="AB4" body2="B4"/>
+        <exclude body1="CD4" body2="C4"/>
+        <exclude body1="CD4" body2="D4"/>
+        <exclude body1="DE4" body2="D4"/>
+        <exclude body1="DE4" body2="E4"/>
+        <exclude body1="FG4" body2="F4"/>
+        <exclude body1="FG4" body2="G4"/>
+        <exclude body1="GA4" body2="G4"/>
+        <exclude body1="GA4" body2="A4"/>
+
+        <exclude body1="AB5" body2="A5"/>
+        <exclude body1="AB5" body2="B5"/>
+        <exclude body1="CD5" body2="C5"/>
+        <exclude body1="CD5" body2="D5"/>
+        <exclude body1="DE5" body2="D5"/>
+        <exclude body1="DE5" body2="E5"/>
+        <exclude body1="FG5" body2="F5"/>
+        <exclude body1="FG5" body2="G5"/>
+        <exclude body1="GA5" body2="G5"/>
+        <exclude body1="GA5" body2="A5"/>
+
+        <exclude body1="AB6" body2="A6"/>
+        <exclude body1="AB6" body2="B6"/>
+        <exclude body1="CD6" body2="C6"/>
+        <exclude body1="CD6" body2="D6"/>
+        <exclude body1="DE6" body2="D6"/>
+        <exclude body1="DE6" body2="E6"/>
+        <exclude body1="FG6" body2="F6"/>
+        <exclude body1="FG6" body2="G6"/>
+        <exclude body1="GA6" body2="G6"/>
+        <exclude body1="GA6" body2="A6"/>
+
+        <exclude body1="AB7" body2="A7"/>
+        <exclude body1="AB7" body2="B7"/>
+        <exclude body1="CD7" body2="C7"/>
+        <exclude body1="CD7" body2="D7"/>
+        <exclude body1="DE7" body2="D7"/>
+        <exclude body1="DE7" body2="E7"/>
+        <exclude body1="FG7" body2="F7"/>
+        <exclude body1="FG7" body2="G7"/>
+        <exclude body1="GA7" body2="G7"/>
+        <exclude body1="GA7" body2="A7"/>
+    </contact>
+
+    <tendon>
+        <fixed name="robot0:T_WRJ1r" limited="true" range="-0.032 0.032" user="1236">
+            <joint joint="robot0:WRJ1" coef="0.0325"></joint>
+        </fixed>
+        <fixed name="robot0:T_WRJ1l" limited="true" range="-0.032 0.032" user="1237">
+            <joint joint="robot0:WRJ1" coef="-0.0325"></joint>
+        </fixed>
+        <fixed name="robot0:T_WRJ0u" limited="true" range="-0.032 0.032" user="1236">
+            <joint joint="robot0:WRJ0" coef="0.0175"></joint>
+        </fixed>
+        <fixed name="robot0:T_WRJ0d" limited="true" range="-0.032 0.032" user="1237">
+            <joint joint="robot0:WRJ0" coef="-0.0175"></joint>
+        </fixed>
+        <fixed name="robot0:T_FFJ3r" limited="true" range="-0.018 0.018" user="1204">
+            <joint joint="robot0:FFJ3" coef="0.01"></joint>
+        </fixed>
+        <fixed name="robot0:T_FFJ3l" limited="true" range="-0.018 0.018" user="1205">
+            <joint joint="robot0:FFJ3" coef="-0.01"></joint>
+        </fixed>
+        <fixed name="robot0:T_FFJ2u" limited="true" range="-0.007 0.03" user="1202">
+            <joint joint="robot0:FFJ2" coef="0.01"></joint>
+        </fixed>
+        <fixed name="robot0:T_FFJ2d" limited="true" range="-0.03 0.007" user="1203">
+            <joint joint="robot0:FFJ2" coef="-0.01"></joint>
+        </fixed>
+        <fixed name="robot0:T_FFJ1c" limited="true" range="-0.001 0.001">
+            <joint joint="robot0:FFJ0" coef="0.00705"></joint>
+            <joint joint="robot0:FFJ1" coef="-0.00805"></joint>
+        </fixed>
+        <fixed name="robot0:T_FFJ1u" limited="true" range="-0.007 0.03" user="1200">
+            <joint joint="robot0:FFJ0" coef="0.00705"></joint>
+            <joint joint="robot0:FFJ1" coef="0.00805"></joint>
+        </fixed>
+        <fixed name="robot0:T_FFJ1d" limited="true" range="-0.03 0.007" user="1201">
+            <joint joint="robot0:FFJ0" coef="-0.00705"></joint>
+            <joint joint="robot0:FFJ1" coef="-0.00805"></joint>
+        </fixed>
+        <fixed name="robot0:T_MFJ3r" limited="true" range="-0.018 0.018" user="1210">
+            <joint joint="robot0:MFJ3" coef="0.01"></joint>
+        </fixed>
+        <fixed name="robot0:T_MFJ3l" limited="true" range="-0.018 0.018" user="1211">
+            <joint joint="robot0:MFJ3" coef="-0.01"></joint>
+        </fixed>
+        <fixed name="robot0:T_MFJ2u" limited="true" range="-0.007 0.03" user="1208">
+            <joint joint="robot0:MFJ2" coef="0.01"></joint>
+        </fixed>
+        <fixed name="robot0:T_MFJ2d" limited="true" range="-0.03 0.007" user="1209">
+            <joint joint="robot0:MFJ2" coef="-0.01"></joint>
+        </fixed>
+        <fixed name="robot0:T_MFJ1c" limited="true" range="-0.001 0.001">
+            <joint joint="robot0:MFJ0" coef="0.00705"></joint>
+            <joint joint="robot0:MFJ1" coef="-0.00805"></joint>
+        </fixed>
+        <fixed name="robot0:T_MFJ1u" limited="true" range="-0.007 0.03" user="1206">
+            <joint joint="robot0:MFJ0" coef="0.00705"></joint>
+            <joint joint="robot0:MFJ1" coef="0.00805"></joint>
+        </fixed>
+        <fixed name="robot0:T_MFJ1d" limited="true" range="-0.03 0.007" user="1207">
+            <joint joint="robot0:MFJ0" coef="-0.00705"></joint>
+            <joint joint="robot0:MFJ1" coef="-0.00805"></joint>
+        </fixed>
+        <fixed name="robot0:T_RFJ3r" limited="true" range="-0.018 0.018" user="1216">
+            <joint joint="robot0:RFJ3" coef="0.01"></joint>
+        </fixed>
+        <fixed name="robot0:T_RFJ3l" limited="true" range="-0.018 0.018" user="1217">
+            <joint joint="robot0:RFJ3" coef="-0.01"></joint>
+        </fixed>
+        <fixed name="robot0:T_RFJ2u" limited="true" range="-0.007 0.03" user="1214">
+            <joint joint="robot0:RFJ2" coef="0.01"></joint>
+        </fixed>
+        <fixed name="robot0:T_RFJ2d" limited="true" range="-0.03 0.007" user="1215">
+            <joint joint="robot0:RFJ2" coef="-0.01"></joint>
+        </fixed>
+        <fixed name="robot0:T_RFJ1c" limited="true" range="-0.001 0.001">
+            <joint joint="robot0:RFJ0" coef="0.00705"></joint>
+            <joint joint="robot0:RFJ1" coef="-0.00805"></joint>
+        </fixed>
+        <fixed name="robot0:T_RFJ1u" limited="true" range="-0.007 0.03" user="1212">
+            <joint joint="robot0:RFJ0" coef="0.00705"></joint>
+            <joint joint="robot0:RFJ1" coef="0.00805"></joint>
+        </fixed>
+        <fixed name="robot0:T_RFJ1d" limited="true" range="-0.03 0.007" user="1213">
+            <joint joint="robot0:RFJ0" coef="-0.00705"></joint>
+            <joint joint="robot0:RFJ1" coef="-0.00805"></joint>
+        </fixed>
+        <fixed name="robot0:T_LFJ4u" limited="true" range="-0.007 0.03" user="1224">
+            <joint joint="robot0:LFJ4" coef="0.01"></joint>
+        </fixed>
+        <fixed name="robot0:T_LFJ4d" limited="true" range="-0.03 0.007" user="1225">
+            <joint joint="robot0:LFJ4" coef="-0.01"></joint>
+        </fixed>
+        <fixed name="robot0:T_LFJ3r" limited="true" range="-0.018 0.018" user="1222">
+            <joint joint="robot0:LFJ3" coef="0.01"></joint>
+        </fixed>
+        <fixed name="robot0:T_LFJ3l" limited="true" range="-0.018 0.018" user="1223">
+            <joint joint="robot0:LFJ3" coef="-0.01"></joint>
+        </fixed>
+        <fixed name="robot0:T_LFJ2u" limited="true" range="-0.007 0.03" user="1220">
+            <joint joint="robot0:LFJ2" coef="0.01"></joint>
+        </fixed>
+        <fixed name="robot0:T_LFJ2d" limited="true" range="-0.03 0.007" user="1221">
+            <joint joint="robot0:LFJ2" coef="-0.01"></joint>
+        </fixed>
+        <fixed name="robot0:T_LFJ1c" limited="true" range="-0.001 0.001">
+            <joint joint="robot0:LFJ0" coef="0.00705"></joint>
+            <joint joint="robot0:LFJ1" coef="-0.00805"></joint>
+        </fixed>
+        <fixed name="robot0:T_LFJ1u" limited="true" range="-0.007 0.03" user="1218">
+            <joint joint="robot0:LFJ0" coef="0.00705"></joint>
+            <joint joint="robot0:LFJ1" coef="0.00805"></joint>
+        </fixed>
+        <fixed name="robot0:T_LFJ1d" limited="true" range="-0.03 0.007" user="1219">
+            <joint joint="robot0:LFJ0" coef="-0.00705"></joint>
+            <joint joint="robot0:LFJ1" coef="-0.00805"></joint>
+        </fixed>
+        <fixed name="robot0:T_THJ4a" limited="true" range="-0.018 0.018" user="1234">
+            <joint joint="robot0:THJ4" coef="0.01636"></joint>
+        </fixed>
+        <fixed name="robot0:T_THJ4c" limited="true" range="-0.018 0.018" user="1235">
+            <joint joint="robot0:THJ4" coef="-0.01636"></joint>
+        </fixed>
+        <fixed name="robot0:T_THJ3u" limited="true" range="-0.007 0.03" user="1232">
+            <joint joint="robot0:THJ3" coef="0.01"></joint>
+        </fixed>
+        <fixed name="robot0:T_THJ3d" limited="true" range="-0.03 0.007" user="1233">
+            <joint joint="robot0:THJ3" coef="-0.01"></joint>
+        </fixed>
+        <fixed name="robot0:T_THJ2u" limited="true" range="-0.018 0.018" user="1230">
+            <joint joint="robot0:THJ2" coef="0.011"></joint>
+        </fixed>
+        <fixed name="robot0:T_THJ2d" limited="true" range="-0.018 0.018" user="1231">
+            <joint joint="robot0:THJ2" coef="-0.011"></joint>
+        </fixed>
+        <fixed name="robot0:T_THJ1r" limited="true" range="-0.018 0.018" user="1228">
+            <joint joint="robot0:THJ1" coef="0.011"></joint>
+        </fixed>
+        <fixed name="robot0:T_THJ1l" limited="true" range="-0.018 0.018" user="1229">
+            <joint joint="robot0:THJ1" coef="-0.011"></joint>
+        </fixed>
+        <fixed name="robot0:T_THJ0r" limited="true" range="-0.03 0.007" user="1226">
+            <joint joint="robot0:THJ0" coef="0.009"></joint>
+        </fixed>
+        <fixed name="robot0:T_THJ0l" limited="true" range="-0.007 0.03" user="1227">
+            <joint joint="robot0:THJ0" coef="-0.009"></joint>
+        </fixed>
+        <fixed name="lh_FFJ0">
+      <joint joint="lh_FFJ2" coef="1"/>
+      <joint joint="lh_FFJ1" coef="1"/>
+    </fixed>
+        <fixed name="lh_MFJ0">
+          <joint joint="lh_MFJ2" coef="1"/>
+          <joint joint="lh_MFJ1" coef="1"/>
+        </fixed>
+        <fixed name="lh_RFJ0">
+          <joint joint="lh_RFJ2" coef="1"/>
+          <joint joint="lh_RFJ1" coef="1"/>
+        </fixed>
+        <fixed name="lh_LFJ0">
+          <joint joint="lh_LFJ2" coef="1"/>
+          <joint joint="lh_LFJ1" coef="1"/>
+        </fixed>
+    </tendon>
+
+    <sensor>
+        <jointpos name="robot0:Sjp_WRJ1" joint="robot0:WRJ1"></jointpos>
+        <jointpos name="robot0:Sjp_WRJ0" joint="robot0:WRJ0"></jointpos>
+        <jointpos name="robot0:Sjp_FFJ3" joint="robot0:FFJ3"></jointpos>
+        <jointpos name="robot0:Sjp_FFJ2" joint="robot0:FFJ2"></jointpos>
+        <jointpos name="robot0:Sjp_FFJ1" joint="robot0:FFJ1"></jointpos>
+        <jointpos name="robot0:Sjp_FFJ0" joint="robot0:FFJ0"></jointpos>
+        <jointpos name="robot0:Sjp_MFJ3" joint="robot0:MFJ3"></jointpos>
+        <jointpos name="robot0:Sjp_MFJ2" joint="robot0:MFJ2"></jointpos>
+        <jointpos name="robot0:Sjp_MFJ1" joint="robot0:MFJ1"></jointpos>
+        <jointpos name="robot0:Sjp_MFJ0" joint="robot0:MFJ0"></jointpos>
+        <jointpos name="robot0:Sjp_RFJ3" joint="robot0:RFJ3"></jointpos>
+        <jointpos name="robot0:Sjp_RFJ2" joint="robot0:RFJ2"></jointpos>
+        <jointpos name="robot0:Sjp_RFJ1" joint="robot0:RFJ1"></jointpos>
+        <jointpos name="robot0:Sjp_RFJ0" joint="robot0:RFJ0"></jointpos>
+        <jointpos name="robot0:Sjp_LFJ4" joint="robot0:LFJ4"></jointpos>
+        <jointpos name="robot0:Sjp_LFJ3" joint="robot0:LFJ3"></jointpos>
+        <jointpos name="robot0:Sjp_LFJ2" joint="robot0:LFJ2"></jointpos>
+        <jointpos name="robot0:Sjp_LFJ1" joint="robot0:LFJ1"></jointpos>
+        <jointpos name="robot0:Sjp_LFJ0" joint="robot0:LFJ0"></jointpos>
+        <jointpos name="robot0:Sjp_THJ4" joint="robot0:THJ4"></jointpos>
+        <jointpos name="robot0:Sjp_THJ3" joint="robot0:THJ3"></jointpos>
+        <jointpos name="robot0:Sjp_THJ2" joint="robot0:THJ2"></jointpos>
+        <jointpos name="robot0:Sjp_THJ1" joint="robot0:THJ1"></jointpos>
+        <jointpos name="robot0:Sjp_THJ0" joint="robot0:THJ0"></jointpos>
+        <touch name="robot0:ST_Tch_fftip" site="robot0:Tch_fftip"></touch>
+        <touch name="robot0:ST_Tch_mftip" site="robot0:Tch_mftip"></touch>
+        <touch name="robot0:ST_Tch_rftip" site="robot0:Tch_rftip"></touch>
+        <touch name="robot0:ST_Tch_lftip" site="robot0:Tch_lftip"></touch>
+        <touch name="robot0:ST_Tch_thtip" site="robot0:Tch_thtip"></touch>
+    </sensor>
+
+    <actuator>
+        <position name="robot0:A_WRJ1" class="robot0:asset_class" user="2038" joint="robot0:WRJ1" ctrlrange="-0.489 0.14" kp="5" forcerange="-4.785 4.785"></position>
+        <position name="robot0:A_WRJ0" class="robot0:asset_class" user="2036" joint="robot0:WRJ0" ctrlrange="-0.698 0.489" kp="5" forcerange="-2.175 2.175"></position>
+        <position name="robot0:A_FFJ3" class="robot0:asset_class" user="2004" joint="robot0:FFJ3" ctrlrange="-0.349 0.349" kp="1" forcerange="-0.9 0.9"></position>
+        <position name="robot0:A_FFJ2" class="robot0:asset_class" user="2002" joint="robot0:FFJ2" ctrlrange="0 1.571" kp="1" forcerange="-0.9 0.9"></position>
+        <position name="robot0:A_FFJ1" class="robot0:asset_class" user="2000" joint="robot0:FFJ1" ctrlrange="0 1.571" kp="1" forcerange="-0.7245 0.7245"></position>
+        <position name="robot0:A_MFJ3" class="robot0:asset_class" user="2010" joint="robot0:MFJ3" ctrlrange="-0.349 0.349" kp="1" forcerange="-0.9 0.9"></position>
+        <position name="robot0:A_MFJ2" class="robot0:asset_class" user="2008" joint="robot0:MFJ2" ctrlrange="0 1.571" kp="1" forcerange="-0.9 0.9"></position>
+        <position name="robot0:A_MFJ1" class="robot0:asset_class" user="2006" joint="robot0:MFJ1" ctrlrange="0 1.571" kp="1" forcerange="-0.7245 0.7245"></position>
+        <position name="robot0:A_RFJ3" class="robot0:asset_class" user="2016" joint="robot0:RFJ3" ctrlrange="-0.349 0.349" kp="1" forcerange="-0.9 0.9"></position>
+        <position name="robot0:A_RFJ2" class="robot0:asset_class" user="2014" joint="robot0:RFJ2" ctrlrange="0 1.571" kp="1" forcerange="-0.9 0.9"></position>
+        <position name="robot0:A_RFJ1" class="robot0:asset_class" user="2012" joint="robot0:RFJ1" ctrlrange="0 1.571" kp="1" forcerange="-0.7245 0.7245"></position>
+        <position name="robot0:A_LFJ4" class="robot0:asset_class" user="2024" joint="robot0:LFJ4" ctrlrange="0 0.785" kp="1" forcerange="-0.9 0.9"></position>
+        <position name="robot0:A_LFJ3" class="robot0:asset_class" user="2022" joint="robot0:LFJ3" ctrlrange="-0.349 0.349" kp="1" forcerange="-0.9 0.9"></position>
+        <position name="robot0:A_LFJ2" class="robot0:asset_class" user="2020" joint="robot0:LFJ2" ctrlrange="0 1.571" kp="1" forcerange="-0.9 0.9"></position>
+        <position name="robot0:A_LFJ1" class="robot0:asset_class" user="2018" joint="robot0:LFJ1" ctrlrange="0 1.571" kp="1" forcerange="-0.7245 0.7245"></position>
+        <position name="robot0:A_THJ4" class="robot0:asset_class" user="2034" joint="robot0:THJ4" ctrlrange="-1.047 1.047" kp="1" forcerange="-2.3722 2.3722"></position>
+        <position name="robot0:A_THJ3" class="robot0:asset_class" user="2032" joint="robot0:THJ3" ctrlrange="0 1.222" kp="1" forcerange="-1.45 1.45"></position>
+        <position name="robot0:A_THJ2" class="robot0:asset_class" user="2030" joint="robot0:THJ2" ctrlrange="-0.209 0.209" kp="1" forcerange="-0.99 0.99"></position>
+        <position name="robot0:A_THJ1" class="robot0:asset_class" user="2028" joint="robot0:THJ1" ctrlrange="-0.524 0.524" kp="1" forcerange="-0.99 0.99"></position>
+        <position name="robot0:A_THJ0" class="robot0:asset_class" user="2026" joint="robot0:THJ0" ctrlrange="-1.571 0" kp="1" forcerange="-0.81 0.81"></position>
+
+        <position name="conveyor_x" joint="conveyor_x" ctrlrange="-0.7 0.7" ctrllimited="true" kp="400"/>
+        <position name="conveyor_y" joint="conveyor_y" ctrlrange="-0.5 0.5" ctrllimited="true" kp="400"/>
+        <position name="conveyor_z" joint="conveyor_z" ctrlrange="-0.5 0.5" ctrllimited="true" kp="400"/>
+
+        <position name="lh_A_WRJ2" joint="lh_WRJ2" class="wrist_y"/>
+        <position name="lh_A_WRJ1" joint="lh_WRJ1" class="wrist_x"/>
+        <position name="lh_A_FFJ4" joint="lh_FFJ4" class="knuckle"/>
+        <position name="lh_A_FFJ3" joint="lh_FFJ3" class="proximal"/>
+        <position name="lh_A_FFJ0" tendon="lh_FFJ0" class="middle_distal"/>
+        <position name="lh_A_MFJ4" joint="lh_MFJ4" class="knuckle"/>
+        <position name="lh_A_MFJ3" joint="lh_MFJ3" class="proximal"/>
+        <position name="lh_A_MFJ0" tendon="lh_MFJ0" class="middle_distal"/>
+        <position name="lh_A_RFJ4" joint="lh_RFJ4" class="knuckle"/>
+        <position name="lh_A_RFJ3" joint="lh_RFJ3" class="proximal"/>
+        <position name="lh_A_RFJ0" tendon="lh_RFJ0" class="middle_distal"/>
+        <position name="lh_A_LFJ5" joint="lh_LFJ5" class="metacarpal"/>
+        <position name="lh_A_LFJ4" joint="lh_LFJ4" class="knuckle"/>
+        <position name="lh_A_LFJ3" joint="lh_LFJ3" class="proximal"/>
+        <position name="lh_A_LFJ0" tendon="lh_LFJ0" class="middle_distal"/>
+        <position name="lh_A_THJ5" joint="lh_THJ5" class="thbase"/>
+        <position name="lh_A_THJ4" joint="lh_THJ4" class="thproximal"/>
+        <position name="lh_A_THJ3" joint="lh_THJ3" class="thhub"/>
+        <position name="lh_A_THJ2" joint="lh_THJ2" class="thmiddle"/>
+        <position name="lh_A_THJ1" joint="lh_THJ1" class="thdistal"/>
+
+        <position name="left_conveyor_x" joint="left_conveyor_x" ctrlrange="-1.0 1.0" ctrllimited="true" kp="400"/>
+        <position name="left_conveyor_y" joint="left_conveyor_y" ctrlrange="-0.5 0.5" ctrllimited="true" kp="400"/>
+        <position name="left_conveyor_z" joint="left_conveyor_z" ctrlrange="-0.5 0.5" ctrllimited="true" kp="400"/>
+
+        <velocity name= "A0_velocity"  joint="A0_joint"  kv="1"/>
+		<velocity name="AB0_velocity" joint="AB0_joint"  kv="1"/>
+		<velocity name= "B0_velocity"  joint="B0_joint"  kv="1"/>
+
+		<velocity name= "C1_velocity"  joint="C1_joint"  kv="1"/>
+		<velocity name="CD1_velocity" joint="CD1_joint"  kv="1"/>
+		<velocity name= "D1_velocity"  joint="D1_joint"  kv="1"/>
+		<velocity name="DE1_velocity" joint="DE1_joint"  kv="1"/>
+		<velocity name= "E1_velocity"  joint="E1_joint"  kv="1"/>
+        <velocity name= "F1_velocity"  joint="F1_joint"  kv="1"/>
+		<velocity name="FG1_velocity" joint="FG1_joint"  kv="1"/>
+		<velocity name= "G1_velocity"  joint="G1_joint"  kv="1"/>
+		<velocity name="GA1_velocity" joint="GA1_joint"  kv="1"/>
+		<velocity name= "A1_velocity"  joint="A1_joint"  kv="1"/>
+		<velocity name="AB1_velocity" joint="AB1_joint"  kv="1"/>
+		<velocity name= "B1_velocity"  joint="B1_joint"  kv="1"/>
+
+        <velocity name= "C2_velocity"  joint="C2_joint"  kv="1"/>
+		<velocity name="CD2_velocity" joint="CD2_joint"  kv="1"/>
+		<velocity name= "D2_velocity"  joint="D2_joint"  kv="1"/>
+		<velocity name="DE2_velocity" joint="DE2_joint"  kv="1"/>
+		<velocity name= "E2_velocity"  joint="E2_joint"  kv="1"/>
+        <velocity name= "F2_velocity"  joint="F2_joint"  kv="1"/>
+		<velocity name="FG2_velocity" joint="FG2_joint"  kv="1"/>
+		<velocity name= "G2_velocity"  joint="G2_joint"  kv="1"/>
+		<velocity name="GA2_velocity" joint="GA2_joint"  kv="1"/>
+		<velocity name= "A2_velocity"  joint="A2_joint"  kv="1"/>
+		<velocity name="AB2_velocity" joint="AB2_joint"  kv="1"/>
+		<velocity name= "B2_velocity"  joint="B2_joint"  kv="1"/>
+
+        <velocity name= "C3_velocity"  joint="C3_joint"  kv="1"/>
+		<velocity name="CD3_velocity" joint="CD3_joint"  kv="1"/>
+		<velocity name= "D3_velocity"  joint="D3_joint"  kv="1"/>
+		<velocity name="DE3_velocity" joint="DE3_joint"  kv="1"/>
+		<velocity name= "E3_velocity"  joint="E3_joint"  kv="1"/>
+        <velocity name= "F3_velocity"  joint="F3_joint"  kv="1"/>
+		<velocity name="FG3_velocity" joint="FG3_joint"  kv="1"/>
+		<velocity name= "G3_velocity"  joint="G3_joint"  kv="1"/>
+		<velocity name="GA3_velocity" joint="GA3_joint"  kv="1"/>
+		<velocity name= "A3_velocity"  joint="A3_joint"  kv="1"/>
+		<velocity name="AB3_velocity" joint="AB3_joint"  kv="1"/>
+		<velocity name= "B3_velocity"  joint="B3_joint"  kv="1"/>
+
+        <velocity name= "C4_velocity" joint= "C4_joint" kv="1"/>
+		<velocity name="CD4_velocity" joint="CD4_joint" kv="1"/>
+		<velocity name= "D4_velocity" joint= "D4_joint" kv="1"/>
+		<velocity name="DE4_velocity" joint="DE4_joint" kv="1"/>
+		<velocity name= "E4_velocity" joint= "E4_joint" kv="1"/>
+        <velocity name= "F4_velocity" joint= "F4_joint" kv="1"/>
+		<velocity name="FG4_velocity" joint="FG4_joint" kv="1"/>
+		<velocity name= "G4_velocity" joint= "G4_joint" kv="1"/>
+		<velocity name="GA4_velocity" joint="GA4_joint" kv="1"/>
+		<velocity name= "A4_velocity" joint= "A4_joint" kv="1"/>
+		<velocity name="AB4_velocity" joint="AB4_joint" kv="1"/>
+		<velocity name= "B4_velocity" joint= "B4_joint" kv="1"/>
+
+        <velocity name= "C5_velocity"  joint="C5_joint"  kv="1"/>
+		<velocity name="CD5_velocity" joint="CD5_joint"  kv="1"/>
+		<velocity name= "D5_velocity"  joint="D5_joint"  kv="1"/>
+		<velocity name="DE5_velocity" joint="DE5_joint"  kv="1"/>
+		<velocity name= "E5_velocity"  joint="E5_joint"  kv="1"/>
+        <velocity name= "F5_velocity"  joint="F5_joint"  kv="1"/>
+		<velocity name="FG5_velocity" joint="FG5_joint"  kv="1"/>
+		<velocity name= "G5_velocity"  joint="G5_joint"  kv="1"/>
+		<velocity name="GA5_velocity" joint="GA5_joint"  kv="1"/>
+		<velocity name= "A5_velocity"  joint="A5_joint"  kv="1"/>
+		<velocity name="AB5_velocity" joint="AB5_joint"  kv="1"/>
+		<velocity name= "B5_velocity"  joint="B5_joint"  kv="1"/>
+
+        <velocity name= "C6_velocity"  joint="C6_joint"  kv="1"/>
+		<velocity name="CD6_velocity" joint="CD6_joint"  kv="1"/>
+		<velocity name= "D6_velocity"  joint="D6_joint"  kv="1"/>
+		<velocity name="DE6_velocity" joint="DE6_joint"  kv="1"/>
+		<velocity name= "E6_velocity"  joint="E6_joint"  kv="1"/>
+        <velocity name= "F6_velocity"  joint="F6_joint"  kv="1"/>
+		<velocity name="FG6_velocity" joint="FG6_joint"  kv="1"/>
+		<velocity name= "G6_velocity"  joint="G6_joint"  kv="1"/>
+		<velocity name="GA6_velocity" joint="GA6_joint"  kv="1"/>
+		<velocity name= "A6_velocity"  joint="A6_joint"  kv="1"/>
+		<velocity name="AB6_velocity" joint="AB6_joint"  kv="1"/>
+		<velocity name= "B6_velocity"  joint="B6_joint"  kv="1"/>
+
+        <velocity name= "C7_velocity"  joint="C7_joint"  kv="1"/>
+		<velocity name="CD7_velocity" joint="CD7_joint"  kv="1"/>
+		<velocity name= "D7_velocity"  joint="D7_joint"  kv="1"/>
+		<velocity name="DE7_velocity" joint="DE7_joint"  kv="1"/>
+		<velocity name= "E7_velocity"  joint="E7_joint"  kv="1"/>
+        <velocity name= "F7_velocity"  joint="F7_joint"  kv="1"/>
+		<velocity name="FG7_velocity" joint="FG7_joint"  kv="1"/>
+		<velocity name= "G7_velocity"  joint="G7_joint"  kv="1"/>
+		<velocity name="GA7_velocity" joint="GA7_joint"  kv="1"/>
+		<velocity name= "A7_velocity"  joint="A7_joint"  kv="1"/>
+		<velocity name="AB7_velocity" joint="AB7_joint"  kv="1"/>
+		<velocity name= "B7_velocity"  joint="B7_joint"  kv="1"/>
+
+        <velocity name= "C8_velocity"  joint="C8_joint"  kv="1"/>
+    </actuator>
+</mujoco>

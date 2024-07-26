@@ -1,0 +1,462 @@
+<mujoco>
+	<body name="EntirePiano" pos="0 0 2" euler="3.14159 0 0">
+		<body     name="Octave_0" pos="+0.168 0 1" euler="0 3.14159 0">
+			<body       name="A0" pos="0 0 0" childclass="key">
+				<geom   name="A0_white_key" class="a" />
+				<joint  name="A0_joint"/>
+				<site   name="A0_site"/>
+			</body>
+			<body      name="AB0" pos="0 0 0" childclass="key">
+				<geom  name="AB0_white_key" class="ab" />
+				<joint name="AB0_joint"/>
+				<site  name="AB0_site"/>
+			</body>
+			<body       name="B0" pos="0 0 0" childclass="key">
+				<geom   name="B0_white_key" class="b" />
+				<joint  name="B0_joint"/>
+				<site   name="B0_site"/>
+			</body>
+		</body>
+		<body     name="Octave_1" pos="-0.000 0 1" euler="0 3.14159 0">
+			<body       name="C1" pos="0 0 0" childclass="key">
+				<geom   name="C1_white_key" class="c" />
+				<joint  name="C1_joint"/>
+				<site   name="C1_site"/>
+			</body>
+			<body      name="CD1" pos="0 0 0" childclass="key">
+				<geom  name="CD1_white_key" class="cd" />
+				<joint name="CD1_joint"/>
+				<site  name="CD1_site"/>
+			</body>
+			<body       name="D1" pos="0 0 0" childclass="key">
+				<geom   name="D1_white_key" class="d" />
+				<joint  name="D1_joint"/>
+				<site   name="D1_site"/>
+			</body>
+			<body      name="DE1" pos="0 0 0" childclass="key">
+				<geom  name="DE1_white_key" class="de" />
+				<joint name="DE1_joint"/>
+				<site  name="DE1_site"/>
+			</body>
+			<body       name="E1" pos="0 0 0" childclass="key">
+				<geom   name="E1_white_key" class="e" />
+				<joint  name="E1_joint"/>
+				<site   name="E1_site"/>
+			</body>
+			<body       name="F1" pos="0 0 0" childclass="key">
+				<geom   name="F1_white_key" class="f" />
+				<joint  name="F1_joint"/>
+				<site   name="F1_site"/>
+			</body>
+			<body      name="FG1" pos="0 0 0" childclass="key">
+				<geom  name="FG1_white_key" class="fg" />
+				<joint name="FG1_joint"/>
+				<site  name="FG1_site"/>
+			</body>
+			<body       name="G1" pos="0 0 0" childclass="key">
+				<geom   name="G1_white_key" class="g" />
+				<joint  name="G1_joint"/>
+				<site   name="G1_site"/>
+			</body>
+			<body      name="GA1" pos="0 0 0" childclass="key">
+				<geom  name="GA1_white_key" class="ga" />
+				<joint name="GA1_joint"/>
+				<site  name="GA1_site"/>
+			</body>
+			<body       name="A1" pos="0 0 0" childclass="key">
+				<geom   name="A1_white_key" class="a" />
+				<joint  name="A1_joint"/>
+				<site   name="A1_site"/>
+			</body>
+			<body      name="AB1" pos="0 0 0" childclass="key">
+				<geom  name="AB1_white_key" class="ab" />
+				<joint name="AB1_joint"/>
+				<site  name="AB1_site"/>
+			</body>
+			<body       name="B1" pos="0 0 0" childclass="key">
+				<geom   name="B1_white_key" class="b" />
+				<joint  name="B1_joint"/>
+				<site   name="B1_site"/>
+			</body>
+		</body>
+		<body     name="Octave_2" pos="-0.168 0 1" euler="0 3.14159 0">
+			<body       name="C2" pos="0 0 0" childclass="key">
+				<geom   name="C2_white_key" class="c" />
+				<joint  name="C2_joint"/>
+				<site   name="C2_site"/>
+			</body>
+			<body      name="CD2" pos="0 0 0" childclass="key">
+				<geom  name="CD2_white_key" class="cd" />
+				<joint name="CD2_joint"/>
+				<site  name="CD2_site"/>
+			</body>
+			<body       name="D2" pos="0 0 0" childclass="key">
+				<geom   name="D2_white_key" class="d" />
+				<joint  name="D2_joint"/>
+				<site   name="D2_site"/>
+			</body>
+			<body      name="DE2" pos="0 0 0" childclass="key">
+				<geom  name="DE2_white_key" class="de" />
+				<joint name="DE2_joint"/>
+				<site  name="DE2_site"/>
+			</body>
+			<body       name="E2" pos="0 0 0" childclass="key">
+				<geom   name="E2_white_key" class="e" />
+				<joint  name="E2_joint"/>
+				<site   name="E2_site"/>
+			</body>
+			<body       name="F2" pos="0 0 0" childclass="key">
+				<geom   name="F2_white_key" class="f" />
+				<joint  name="F2_joint"/>
+				<site   name="F2_site"/>
+			</body>
+			<body      name="FG2" pos="0 0 0" childclass="key">
+				<geom  name="FG2_white_key" class="fg" />
+				<joint name="FG2_joint"/>
+				<site  name="FG2_site"/>
+			</body>
+			<body       name="G2" pos="0 0 0" childclass="key">
+				<geom   name="G2_white_key" class="g" />
+				<joint  name="G2_joint"/>
+				<site   name="G2_site"/>
+			</body>
+			<body      name="GA2" pos="0 0 0" childclass="key">
+				<geom  name="GA2_white_key" class="ga" />
+				<joint name="GA2_joint"/>
+				<site  name="GA2_site"/>
+			</body>
+			<body       name="A2" pos="0 0 0" childclass="key">
+				<geom   name="A2_white_key" class="a" />
+				<joint  name="A2_joint"/>
+				<site   name="A2_site"/>
+			</body>
+			<body      name="AB2" pos="0 0 0" childclass="key">
+				<geom  name="AB2_white_key" class="ab" />
+				<joint name="AB2_joint"/>
+				<site  name="AB2_site"/>
+			</body>
+			<body       name="B2" pos="0 0 0" childclass="key">
+				<geom   name="B2_white_key" class="b" />
+				<joint  name="B2_joint"/>
+				<site   name="B2_site"/>
+			</body>
+		</body>
+		<body     name="Octave_3" pos="-0.336 0 1" euler="0 3.14159 0">
+			<body       name="C3" pos="0 0 0" childclass="key">
+				<geom   name="C3_white_key" class="c" />
+				<joint  name="C3_joint"/>
+				<site   name="C3_site"/>
+			</body>
+			<body      name="CD3" pos="0 0 0" childclass="key">
+				<geom  name="CD3_white_key" class="cd" />
+				<joint name="CD3_joint"/>
+				<site  name="CD3_site"/>
+			</body>
+			<body       name="D3" pos="0 0 0" childclass="key">
+				<geom   name="D3_white_key" class="d" />
+				<joint  name="D3_joint"/>
+				<site   name="D3_site"/>
+			</body>
+			<body      name="DE3" pos="0 0 0" childclass="key">
+				<geom  name="DE3_white_key" class="de" />
+				<joint name="DE3_joint"/>
+				<site  name="DE3_site"/>
+			</body>
+			<body       name="E3" pos="0 0 0" childclass="key">
+				<geom   name="E3_white_key" class="e" />
+				<joint  name="E3_joint"/>
+				<site   name="E3_site"/>
+			</body>
+			<body       name="F3" pos="0 0 0" childclass="key">
+				<geom   name="F3_white_key" class="f" />
+				<joint  name="F3_joint"/>
+				<site   name="F3_site"/>
+			</body>
+			<body      name="FG3" pos="0 0 0" childclass="key">
+				<geom  name="FG3_white_key" class="fg" />
+				<joint name="FG3_joint"/>
+				<site  name="FG3_site"/>
+			</body>
+			<body       name="G3" pos="0 0 0" childclass="key">
+				<geom   name="G3_white_key" class="g" />
+				<joint  name="G3_joint"/>
+				<site   name="G3_site"/>
+			</body>
+			<body      name="GA3" pos="0 0 0" childclass="key">
+				<geom  name="GA3_white_key" class="ga" />
+				<joint name="GA3_joint"/>
+				<site  name="GA3_site"/>
+			</body>
+			<body       name="A3" pos="0 0 0" childclass="key">
+				<geom   name="A3_white_key" class="a" />
+				<joint  name="A3_joint"/>
+				<site   name="A3_site"/>
+			</body>
+			<body      name="AB3" pos="0 0 0" childclass="key">
+				<geom  name="AB3_white_key" class="ab" />
+				<joint name="AB3_joint"/>
+				<site  name="AB3_site"/>
+			</body>
+			<body       name="B3" pos="0 0 0" childclass="key">
+				<geom   name="B3_white_key" class="b" />
+				<joint  name="B3_joint"/>
+				<site   name="B3_site"/>
+			</body>
+		</body>
+		<body     name="Octave_4" pos="-0.504 0 1" euler="0 3.14159 0">
+			<body       name="C4" pos="0 0 0" childclass="key">
+				<geom   name="C4_white_key" class="c" />
+				<joint  name="C4_joint"/>
+				<site   name="C4_site"/>
+			</body>
+			<body      name="CD4" pos="0 0 0" childclass="key">
+				<geom  name="CD4_white_key" class="cd" />
+				<joint name="CD4_joint"/>
+				<site  name="CD4_site"/>
+			</body>
+			<body       name="D4" pos="0 0 0" childclass="key">
+				<geom   name="D4_white_key" class="d" />
+				<joint  name="D4_joint"/>
+				<site   name="D4_site"/>
+			</body>
+			<body      name="DE4" pos="0 0 0" childclass="key">
+				<geom  name="DE4_white_key" class="de" />
+				<joint name="DE4_joint"/>
+				<site  name="DE4_site"/>
+			</body>
+			<body       name="E4" pos="0 0 0" childclass="key">
+				<geom   name="E4_white_key" class="e" />
+				<joint  name="E4_joint"/>
+				<site   name="E4_site"/>
+			</body>
+			<body       name="F4" pos="0 0 0" childclass="key">
+				<geom   name="F4_white_key" class="f" />
+				<joint  name="F4_joint"/>
+				<site   name="F4_site"/>
+			</body>
+			<body      name="FG4" pos="0 0 0" childclass="key">
+				<geom  name="FG4_white_key" class="fg" />
+				<joint name="FG4_joint"/>
+				<site  name="FG4_site"/>
+			</body>
+			<body       name="G4" pos="0 0 0" childclass="key">
+				<geom   name="G4_white_key" class="g" />
+				<joint  name="G4_joint"/>
+				<site   name="G4_site"/>
+			</body>
+			<body      name="GA4" pos="0 0 0" childclass="key">
+				<geom  name="GA4_white_key" class="ga" />
+				<joint name="GA4_joint"/>
+				<site  name="GA4_site"/>
+			</body>
+			<body       name="A4" pos="0 0 0" childclass="key">
+				<geom   name="A4_white_key" class="a" />
+				<joint  name="A4_joint"/>
+				<site   name="A4_site"/>
+			</body>
+			<body      name="AB4" pos="0 0 0" childclass="key">
+				<geom  name="AB4_white_key" class="ab" />
+				<joint name="AB4_joint"/>
+				<site  name="AB4_site"/>
+			</body>
+			<body       name="B4" pos="0 0 0" childclass="key">
+				<geom   name="B4_white_key" class="b" />
+				<joint  name="B4_joint"/>
+				<site   name="B4_site"/>
+			</body>
+		</body>
+		<body     name="Octave_5" pos="-0.672 0 1" euler="0 3.14159 0">
+			<body       name="C5" pos="0 0 0" childclass="key">
+				<geom   name="C5_white_key" class="c" />
+				<joint  name="C5_joint"/>
+				<site   name="C5_site"/>
+			</body>
+			<body      name="CD5" pos="0 0 0" childclass="key">
+				<geom  name="CD5_white_key" class="cd" />
+				<joint name="CD5_joint"/>
+				<site  name="CD5_site"/>
+			</body>
+			<body       name="D5" pos="0 0 0" childclass="key">
+				<geom   name="D5_white_key" class="d" />
+				<joint  name="D5_joint"/>
+				<site   name="D5_site"/>
+			</body>
+			<body      name="DE5" pos="0 0 0" childclass="key">
+				<geom  name="DE5_white_key" class="de" />
+				<joint name="DE5_joint"/>
+				<site  name="DE5_site"/>
+			</body>
+			<body       name="E5" pos="0 0 0" childclass="key">
+				<geom   name="E5_white_key" class="e" />
+				<joint  name="E5_joint"/>
+				<site   name="E5_site"/>
+			</body>
+			<body       name="F5" pos="0 0 0" childclass="key">
+				<geom   name="F5_white_key" class="f" />
+				<joint  name="F5_joint"/>
+				<site   name="F5_site"/>
+			</body>
+			<body      name="FG5" pos="0 0 0" childclass="key">
+				<geom  name="FG5_white_key" class="fg" />
+				<joint name="FG5_joint"/>
+				<site  name="FG5_site"/>
+			</body>
+			<body       name="G5" pos="0 0 0" childclass="key">
+				<geom   name="G5_white_key" class="g" />
+				<joint  name="G5_joint"/>
+				<site   name="G5_site"/>
+			</body>
+			<body      name="GA5" pos="0 0 0" childclass="key">
+				<geom  name="GA5_white_key" class="ga" />
+				<joint name="GA5_joint"/>
+				<site  name="GA5_site"/>
+			</body>
+			<body       name="A5" pos="0 0 0" childclass="key">
+				<geom   name="A5_white_key" class="a" />
+				<joint  name="A5_joint"/>
+				<site   name="A5_site"/>
+			</body>
+			<body      name="AB5" pos="0 0 0" childclass="key">
+				<geom  name="AB5_white_key" class="ab" />
+				<joint name="AB5_joint"/>
+				<site  name="AB5_site"/>
+			</body>
+			<body       name="B5" pos="0 0 0" childclass="key">
+				<geom   name="B5_white_key" class="b" />
+				<joint  name="B5_joint"/>
+				<site   name="B5_site"/>
+			</body>
+		</body>
+		<body     name="Octave_6" pos="-0.840 0 1" euler="0 3.14159 0">
+			<body       name="C6" pos="0 0 0" childclass="key">
+				<geom   name="C6_white_key" class="c" />
+				<joint  name="C6_joint"/>
+				<site   name="C6_site"/>
+			</body>
+			<body      name="CD6" pos="0 0 0" childclass="key">
+				<geom  name="CD6_white_key" class="cd" />
+				<joint name="CD6_joint"/>
+				<site  name="CD6_site"/>
+			</body>
+			<body       name="D6" pos="0 0 0" childclass="key">
+				<geom   name="D6_white_key" class="d" />
+				<joint  name="D6_joint"/>
+				<site   name="D6_site"/>
+			</body>
+			<body      name="DE6" pos="0 0 0" childclass="key">
+				<geom  name="DE6_white_key" class="de" />
+				<joint name="DE6_joint"/>
+				<site  name="DE6_site"/>
+			</body>
+			<body       name="E6" pos="0 0 0" childclass="key">
+				<geom   name="E6_white_key" class="e" />
+				<joint  name="E6_joint"/>
+				<site   name="E6_site"/>
+			</body>
+			<body       name="F6" pos="0 0 0" childclass="key">
+				<geom   name="F6_white_key" class="f" />
+				<joint  name="F6_joint"/>
+				<site   name="F6_site"/>
+			</body>
+			<body      name="FG6" pos="0 0 0" childclass="key">
+				<geom  name="FG6_white_key" class="fg" />
+				<joint name="FG6_joint"/>
+				<site  name="FG6_site"/>
+			</body>
+			<body       name="G6" pos="0 0 0" childclass="key">
+				<geom   name="G6_white_key" class="g" />
+				<joint  name="G6_joint"/>
+				<site   name="G6_site"/>
+			</body>
+			<body      name="GA6" pos="0 0 0" childclass="key">
+				<geom  name="GA6_white_key" class="ga" />
+				<joint name="GA6_joint"/>
+				<site  name="GA6_site"/>
+			</body>
+			<body       name="A6" pos="0 0 0" childclass="key">
+				<geom   name="A6_white_key" class="a" />
+				<joint  name="A6_joint"/>
+				<site   name="A6_site"/>
+			</body>
+			<body      name="AB6" pos="0 0 0" childclass="key">
+				<geom  name="AB6_white_key" class="ab" />
+				<joint name="AB6_joint"/>
+				<site  name="AB6_site"/>
+			</body>
+			<body       name="B6" pos="0 0 0" childclass="key">
+				<geom   name="B6_white_key" class="b" />
+				<joint  name="B6_joint"/>
+				<site   name="B6_site"/>
+			</body>
+		</body>
+		<body     name="Octave_7" pos="-1.008 0 1" euler="0 3.14159 0">
+			<body       name="C7" pos="0 0 0" childclass="key">
+				<geom   name="C7_white_key" class="c" />
+				<joint  name="C7_joint"/>
+				<site   name="C7_site"/>
+			</body>
+			<body      name="CD7" pos="0 0 0" childclass="key">
+				<geom  name="CD7_white_key" class="cd" />
+				<joint name="CD7_joint"/>
+				<site  name="CD7_site"/>
+			</body>
+			<body       name="D7" pos="0 0 0" childclass="key">
+				<geom   name="D7_white_key" class="d" />
+				<joint  name="D7_joint"/>
+				<site   name="D7_site"/>
+			</body>
+			<body      name="DE7" pos="0 0 0" childclass="key">
+				<geom  name="DE7_white_key" class="de" />
+				<joint name="DE7_joint"/>
+				<site  name="DE7_site"/>
+			</body>
+			<body       name="E7" pos="0 0 0" childclass="key">
+				<geom   name="E7_white_key" class="e" />
+				<joint  name="E7_joint"/>
+				<site   name="E7_site"/>
+			</body>
+			<body       name="F7" pos="0 0 0" childclass="key">
+				<geom   name="F7_white_key" class="f" />
+				<joint  name="F7_joint"/>
+				<site   name="F7_site"/>
+			</body>
+			<body      name="FG7" pos="0 0 0" childclass="key">
+				<geom  name="FG7_white_key" class="fg" />
+				<joint name="FG7_joint"/>
+				<site  name="FG7_site"/>
+			</body>
+			<body       name="G7" pos="0 0 0" childclass="key">
+				<geom   name="G7_white_key" class="g" />
+				<joint  name="G7_joint"/>
+				<site   name="G7_site"/>
+			</body>
+			<body      name="GA7" pos="0 0 0" childclass="key">
+				<geom  name="GA7_white_key" class="ga" />
+				<joint name="GA7_joint"/>
+				<site  name="GA7_site"/>
+			</body>
+			<body       name="A7" pos="0 0 0" childclass="key">
+				<geom   name="A7_white_key" class="a" />
+				<joint  name="A7_joint"/>
+				<site   name="A7_site"/>
+			</body>
+			<body      name="AB7" pos="0 0 0" childclass="key">
+				<geom  name="AB7_white_key" class="ab" />
+				<joint name="AB7_joint"/>
+				<site  name="AB7_site"/>
+			</body>
+			<body       name="B7" pos="0 0 0" childclass="key">
+				<geom   name="B7_white_key" class="b" />
+				<joint  name="B7_joint"/>
+				<site   name="B7_site"/>
+			</body>
+		</body>
+		<body     name="Octave_8" pos="-1.176 0 1" euler="0 3.14159 0">
+			<body       name="C8" pos="0 0 0" childclass="key">
+				<geom   name="C8_white_key" class="c" />
+				<joint  name="C8_joint"/>
+				<site   name="C8_site"/>
+			</body>
+		</body>
+	</body>
+</mujoco>
