@@ -25,7 +25,7 @@ def synth(frequency, duration=1.5, sampling_rate=44_100):
     return sound
 
 
-with open("Garbage/notesdict.txt", "r") as file:
+with open("notesdict.txt", "r") as file:
     frequencies_dict = eval(file.readline())
 
 
